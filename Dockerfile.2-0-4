@@ -1,0 +1,9 @@
+FROM node:16
+
+WORKDIR /context
+
+COPY .yarnrc.yml ./
+COPY .yarn ./.yarn/
+COPY yarn.lock package.json .pnp.cjs ./
+
+RUN yarn add unix-dgram@2.0.4
